@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "kapster-blog",
   "private": true,
   "scripts": {
     "build": "nuxt build",
@@ -12,7 +12,8 @@
     "@nuxt/devtools": "latest",
     "@types/node": "^18",
     "nuxt": "^3.5.2",
-    "sass": "^1.63.4"
+    "sass": "^1.63.4",
+    "sass-loader": "^13.3.2"
   },
   "overrides": {
     "vue": "latest"

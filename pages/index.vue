@@ -1,15 +1,9 @@
 <template lang>
-  <div class="container">
-    <h1>How is it Going?</h1>
-  </div>
+  <NuxtLayout :name="layout">
+    <h1>Kapster Blog ✨</h1>
+  </NuxtLayout>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      kek: ''
-    }
-  },
-}
+<script setup>
+const { data } = await useFetch('/api/news')
 </script>
