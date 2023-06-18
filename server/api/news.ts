@@ -1,4 +1,6 @@
-export default defineEventHandler((event) => [
+import { News } from '../../types/news'
+
+export default defineEventHandler((event): News[] => [
   {
     _type: 'post',
     id: 527,

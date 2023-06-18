@@ -1,5 +1,9 @@
 {
   "name": "kapster-blog",
+  "author": {
+    "name": "Vadim Spitsyn",
+    "url": "https://t.me/adorable_internet_friend"
+  },
   "private": true,
   "scripts": {
     "build": "nuxt build",
