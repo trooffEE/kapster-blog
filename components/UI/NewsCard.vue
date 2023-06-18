@@ -2,9 +2,7 @@
   <div class="card bg-dark text-white p-4 rounded-3 relative">
     <div class="row pointer">
       <div class="relative col-3 py-4">
-        <div class="title font-bold sticky-top h-fit">
-          {{ news.title }}
-        </div>
+        <div class="title font-bold sticky-top h-fit">{{ news.title }}</div>
         <div class="preview-on-hover rounded-3" :style="{ backgroundImage: `url(${news.image_preview})` || '' }" />
       </div>
       <div class="col-9 quote-content" v-html="news.content" />
