@@ -1,0 +1,17 @@
+blockquote {
+  background-color: $gray-800;
+  padding: 15px 20px;
+
+  font-size: 14px;
+  clip-path: polygon(1% 2%, 100% 9%, 99% 100%, 0% 93%);
+  margin: 0;
+}
+
+.quote-content {
+  strong {
+    font-weight: 600;
+    background-color: $gray-700;
+    display: inline-block;
+    padding: 3px 5px;
+  }
+}
