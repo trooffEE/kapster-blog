@@ -2,18 +2,35 @@
   <div class="card bg-dark text-white p-4 rounded-3 relative">
     <div class="row pointer">
       <div class="relative col-3 py-4">
-        <div class="title font-bold sticky-top h-fit">{{ news.title }}</div>
-        <div class="preview-on-hover rounded-3" :style="{ backgroundImage: `url(${news.image_preview})` || '' }" />
+        <div class="title font-bold sticky-top h-fit">{{ title }}</div>
+        <div class="preview-on-hover rounded-3" :style="{ backgroundImage: `url(${image_preview})` || '' }" />
       </div>
-      <div class="col-9 quote-content" v-html="news.content" />
+      <div class="col-9 d-flex flex-column justify-content-between">
+        <div class="quote-content" v-html="short" />
+        <div class="d-flex justify-content-between">
+          <div>
+            <Icon :name="currentLikeStatus" color="black" @click="newsStore.toggleLikeNews(id)"/>
+            {{  likes_count }}
+          </div>
+          <div>{{ date }}</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { Icon } from '#components'
 import { News } from '~/types/news'
+import dayjs from 'dayjs'
+import { useNewsStore } from '~/store/news';
 
-defineProps<{ news: News }>()
+const props = defineProps<{ news: News }>()
+const { title, image_preview, likes_count, short, me_liked, published_at, id } = props.news
+
+const newsStore = useNewsStore()
+const currentLikeStatus = computed(() => !me_liked ? 'material-symbols:favorite-outline' : 'material-symbols:favorite-rounded')
+const date = computed(() => dayjs(published_at).format('DD MMMM YYYY'))
 </script>
 
 <styles lang="scss">
